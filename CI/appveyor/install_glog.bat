@@ -11,7 +11,7 @@ if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" (
 
 echo "%generator%"
 echo "%arch%"
-pushd deps
+#pushd deps
 
 set folder_arch=%arch%
 
@@ -24,6 +24,5 @@ pushd build_0_3_5%folder_arch%
 cmake -DWITH_GFLAGS=off -G "%generator%" -A "%arch%" ..
 
 cmake --build . --target install --config %configuration%
-popd
 popd
 popd
